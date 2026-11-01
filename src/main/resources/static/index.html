@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Студенты — учебный кабинет</title>
+  <link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script>
+</head>
+<body>
+  <section id="login-screen" class="login-layout">
+    <div class="login-shell">
+      <a class="brand login-brand" href="/" aria-label="Студенты — главная">СТУДЕНТЫ</a>
+      <main class="login-panel">
+        <form id="login-form">
+          <p class="eyebrow">УЧЕБНЫЙ КАБИНЕТ</p>
+          <h1>Войти</h1>
+          <label>Электронная почта<input name="email" type="email" autocomplete="username" required placeholder="name@example.com"></label>
+          <label for="login-password">Пароль</label>
+          <div class="password-field"><input id="login-password" name="password" type="password" autocomplete="current-password" required placeholder="Введите пароль"><button id="toggle-password" type="button" aria-label="Показать пароль" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path class="eye-slash" d="m3 3 18 18"/></svg></button></div>
+          <p id="login-error" class="error" role="alert"></p>
+          <button class="primary wide login-submit" type="submit">ВОЙТИ <span aria-hidden="true">→</span></button>
+          
+        </form>
+      </main>
+
+    </div>
+  </section>
+  <div id="workspace" hidden>
+    <aside class="topbar" aria-label="Панель навигации"><a class="brand" href="/">СТУДЕНТЫ</a><p class="eyebrow">РАБОЧЕЕ ПРОСТРАНСТВО</p><nav><button id="students-nav">Студенты</button><button id="users-nav">Пользователи</button></nav><div class="account"><strong id="account-email"></strong><p id="account-role"></p><button id="logout" class="quiet">Выйти из аккаунта ↗</button></div></aside>
+    <main class="content"><header><div><p class="eyebrow">УЧЕБНЫЙ КАБИНЕТ / <span id="breadcrumb">СТУДЕНТЫ</span></p><h1 id="page-title">Студенты</h1><p id="page-description" class="muted"></p></div><button id="add" class="primary">+ Добавить студента</button></header>
+      <section class="summary"><div><span class="muted" id="count-label">Всего студентов</span><strong id="total">—</strong></div><p id="access-note"></p></section>
+      <section class="records"><div class="toolbar"><label class="search"><span class="sr-only">Поиск</span><input id="search" type="search" placeholder="Поиск по имени, фамилии или ID…"></label><button id="refresh" class="secondary">↻ Обновить</button></div><p id="page-error" class="error" role="alert"></p><div class="table-scroll"><table><thead id="table-head"></thead><tbody id="table-body"></tbody></table></div><div id="empty" class="empty" hidden></div><footer><span id="shown"></span><span>Учебный кабинет</span></footer></section>
+    </main>
+  </div>
+  <dialog id="editor"><form id="edit-form"><div class="dialog-head"><h2 id="editor-title"></h2><button type="button" class="quiet" data-close aria-label="Закрыть">✕</button></div><div id="fields"></div><p id="form-error" class="error" role="alert"></p><div class="dialog-actions"><button type="button" class="secondary" data-close>Закрыть</button><button id="save" type="submit" class="primary">Сохранить</button></div></form></dialog>
+  <dialog id="delete-dialog"><form id="delete-form"><h2>Удалить запись?</h2><p id="delete-description"></p><p class="muted">Это действие нельзя отменить.</p><p id="delete-error" class="error" role="alert"></p><div class="dialog-actions"><button type="button" class="secondary" id="cancel-delete">Отмена</button><button type="submit" class="danger">Удалить</button></div></form></dialog>
+  <div id="toast" role="status" hidden></div>
+</body>
+</html>
+
+
+
+
+
+
+
