@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:students;DB_CLOSE_DELAY=-1;MODE=PostgreSQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+    hikari:
+      schema: PUBLIC
+      connection-init-sql: SELECT 1
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
